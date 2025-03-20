@@ -1,0 +1,76 @@
+<?php
+    //conexion con la base  de datos 
+    include 'configdb.php'; //include del archivo con los datos de conexión
+	$conexion = new mysqli(SERVIDOR, USUARIO, PASSWORD, BBDD); //Conecta con la base de datos
+    $conexion->set_charset("utf8"); //Usa juego caracteres UTF8
+	//Desactiva errores
+	$controlador = new mysqli_driver();
+    $controlador->report_mode = MYSQLI_REPORT_OFF;
+?>
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>jesuitas</title>
+    <style>
+        body{
+            margin: 0 auto;
+            background-color:#8ef3ff;
+            font-family: "Brush Script MT", cursive;
+        }
+        form{
+            width:200px;
+            height:200px;
+            margin: auto;
+            padding-left:20px;
+            border:1px solid gray;
+            border-radius:10px;
+            background:linear-gradient(180deg,#48ffd3,#48ff9e);
+            font-size:large;
+            font-style:italic;
+        }
+        #boton{
+            margin-top:10px;
+        }
+        input{
+            margin-top:10px;
+        }
+        h1{
+            text-align: center;
+        }
+		a{
+			float:right;
+			 margin-right: 20px;
+			 margin-top:5px;
+		}
+		div{
+			height:50px;
+			 background-color:#8ef3ff;
+			width:max;
+		}
+		#ing{
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+	<div>
+		<a href="index.php"><img src="img/esp.png" alt="" width="40px"></a>
+		<a href="formulario_jesuitas_ing.php"><img src="img/ing.png" alt="" width="40px" id="ing"></a>
+	</div>
+    <h1>Inicia sesion con tu jesuita</h1>
+    <form action="validar.php" method="post">
+        <label for="nombreJesuita">Nombre del jesuita</label><br/>
+        <input type="text" name="nombreJesuita" placeholder="nombre jesuita"/><br/>
+        <label for="codigo">Codigo de jesuita</label><br/>
+        <input type="password" name="codigo" placeholder="codigo jesuita" maxlength="5"/><br/>
+        <input type="submit" value="Iniciar sesion">
+    </form>
+</body>
+</html>
+
+
+<?php
+   // cierre de conexion con la base de datos 
+   $conexion->close();
+?>

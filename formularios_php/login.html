@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>jesuitas</title>
+    <style>
+        body{
+            margin: 0 auto;
+            background-color:#8ef3ff;
+            font-family: "Brush Script MT", cursive;
+        }
+        form{
+            width:300px;
+            height:700px;
+            margin: auto;
+            align-items: center;
+            text-align: center;
+            padding-left:20px;
+            border:1px solid gray;
+            border-radius:10px;
+            background:linear-gradient(180deg,#48ffd3,#48ff9e);
+            font-size:large;
+            font-style:italic;
+        }
+        #boton{
+            margin-top:10px;
+        }
+        input,textarea{
+            margin-top:10px;
+        }
+        h1{
+            text-align: center;
+        }
+		a{
+			float:right;
+			 margin-right: 20px;
+			 margin-top:5px;
+		}
+		div{
+			height:50px;
+			 background-color:#8ef3ff;
+			width:max;
+		}
+		#ing{
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registrar un jesuita</h1>
+    <form action="login.php" method="post">
+        <label for="nAlu">Nombre Alumno</label><br/>
+        <input type="text" name="nAlu" required><br/>
+        <label for="nombreJesuita">Nombre del jesuita</label><br/>
+        <input type="text" name="nombreJesuita" placeholder="nombre jesuita" required/><br/>
+        <label for="codigo">Codigo de jesuita</label><br/>
+        <input type="password" name="codigo" placeholder="codigo jesuita" maxlength="5" required/><br/>
+        <label for="jtaESP">Firma en español</label><br/>
+        <textarea name="jtaESP" cols="20" rows="10" required></textarea><br/>
+        <label for="jtaING">Firma en ingles</label><br/>
+        <textarea name="jtaING" cols="20" rows="10" required></textarea><br/>
+        <input type="submit" value="Iniciar sesion">
+    </form>
+</body>
+</html>
